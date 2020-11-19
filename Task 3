@@ -1,0 +1,52 @@
+#include<stdio.h>
+int main() {
+	int day, month, year;
+	printf("please enter a date before 24/4/2019 in this form (dd/mm/yy)\n");
+	scanf("%d/%d/%d", &day, &month, &year);
+
+	while (year>=2020)
+	{
+		printf("invalid date please enter another date\n");
+		scanf("%d/%d/%d", &day, &month, &year);
+
+	}
+
+	while (year <= 2019)
+	{
+		if (year == 2019)
+		{
+			if (month >= 5 || day >= 25);
+			{
+				printf("invalid date please enter another date\n");
+				scanf("%d/%d/%d", &day, &month, &year);
+
+
+			}
+
+		}
+		if (day > 30 || day < 1 || month>12 || month < 1)
+		{
+			printf("invalid date please enter another date\n");
+			scanf("%d/%d/%d", &day, &month, &year);
+		}
+		year = 2019 - year;
+		month = 4 - month;
+		day = 24 - day;
+		if (month <= 0)
+		{
+			month = month + 12;
+			year = year - 1;
+		}
+		if (day < 0)
+		{
+			day = day * -1;
+		}
+		printf("%d days , %d months  , %d years ", day, month, year);
+		break;
+		
+	}
+	
+	
+	
+	return 0;
+}
